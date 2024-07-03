@@ -1,14 +1,6 @@
 <script setup lang="ts">
+import { IMessage } from "../types/types.ts"
 
-class MessageDetails {
-    constructor(public msg: string, public from: string, public to: string) {
-
-    }
-}
-
-interface IMessage {
-    details: MessageDetails
-}
 
 // const props = defineProps({
 //     msg: {
@@ -21,10 +13,11 @@ interface IMessage {
 // OR
 
 const props = defineProps<IMessage>()
-
+// console.log(props.details.msg)
 </script>
 
 <template>
+    <img width="200px" :src="details.imageUrl" :alt="details.msg">
     <h3>{{ details.msg }}</h3>
 
     <h5>From : {{ details.from }}</h5>
