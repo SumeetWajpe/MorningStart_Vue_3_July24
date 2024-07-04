@@ -23,7 +23,15 @@ let courses: CourseModel[] = [
         price: 4000,
         likes: 300,
         rating: 4,
-        imageUrl: "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/5923684/og_image/optimized/react-context-api-4929b3703a1a7082d99b53eb1bbfc31f.png"
+        imageUrl: "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/2EP14mWkbx9sq03nWnRSGT/f1d22d88bb5dde030275f9520c0f2e92/React_YT_Thumbnail.png"
+    },
+    {
+        id: 3,
+        title: "Redux",
+        price: 4500,
+        likes: 100,
+        rating: 3,
+        imageUrl: "https://blog.openreplay.com/images/understanding-redux-thunk-for-react--the-big-picture/images/hero.png"
     }
 ];
 
