@@ -12,3 +12,7 @@ export class CourseModel {
 export interface CourseProps {
   coursedetails: CourseModel;
 }
+
+export interface RatingProps {
+  numberofstars: number;
+}

@@ -5,7 +5,9 @@
   <div class="card-body">
     <h5 class="card-title">{{coursedetails.title}}</h5>
     <p class="card-text">₹.{{coursedetails.price}}</p>
-    <p class="card-text">{{coursedetails.rating}}</p>
+    <p class="card-text"> 
+      <Rating :numberofstars="coursedetails.rating"/>  
+    </p>
     <button class="btn btn-primary" @click="()=>IncrementLikes()">
         {{currLikes}} <i class="fa-solid fa-thumbs-up"></i>
     </button>
@@ -18,6 +20,7 @@
     </div>
 </template>
 <script setup lang="ts">
+import Rating from "@/components/Rating.vue";
 import type { CourseProps } from '@/types/types';
 import { ref } from 'vue'
 
