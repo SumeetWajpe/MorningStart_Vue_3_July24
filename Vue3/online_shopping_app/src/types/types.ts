@@ -1,6 +1,6 @@
 export class CourseModel {
   constructor(
-    public id: string,
+    public id: number,
     public title: string,
     public price: number,
     public rating: number,
