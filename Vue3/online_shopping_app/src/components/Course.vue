@@ -6,8 +6,11 @@
     <h5 class="card-title">{{coursedetails.title}}</h5>
     <p class="card-text">₹.{{coursedetails.price}}</p>
     <p class="card-text">{{coursedetails.rating}}</p>
-    <button class="btn btn-primary">
-        {{coursedetails.likes}} <i class="fa-solid fa-thumbs-up"></i>
+    <button class="btn btn-primary" @click="()=>IncrementLikes()">
+        {{currLikes}} <i class="fa-solid fa-thumbs-up"></i>
+    </button>
+    <button class="btn btn-danger mx-1" @click="()=>DeleteProduct()">
+      <i class="fa-solid fa-trash"></i>
     </button>
     
   </div>
@@ -16,8 +19,22 @@
 </template>
 <script setup lang="ts">
 import type { CourseProps } from '@/types/types';
+import { ref } from 'vue'
 
-defineProps<CourseProps>()
+
+const props = defineProps<CourseProps>()
+let currLikes = ref<number>(props.coursedetails.likes);
+
+const emit = defineEmits(['deletecourse'])
+
+function IncrementLikes(){
+     currLikes.value++;
+}
+
+function DeleteProduct(){
+  // emit the deleteproduct event
+  emit('deletecourse',props.coursedetails.id)
+}
 
 </script>
 <style>

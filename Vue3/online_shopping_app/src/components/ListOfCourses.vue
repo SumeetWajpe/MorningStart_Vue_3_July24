@@ -1,14 +1,19 @@
 <template>
    <div class="row">
-       <Course v-for="course in courses" :coursedetails="course" />
+       <Course v-for="course in  courses.courselist" :coursedetails="course" @deletecourse="(theCourseId:number)=>DeleteCourseHandler(theCourseId)" :key="course.id" />
    </div>
 </template>
 <script setup lang="ts">
 import Course from "@/components/Course.vue";
 import type { CourseModel } from '@/types/types';
+import {reactive} from "vue"
 
+type CourseType = {
+    courselist:CourseModel[]
+}
 
-let courses: CourseModel[] = [
+let courses = reactive<CourseType>({
+    courselist :[
     {
         id: 1,
         title: "VueJS",
@@ -33,9 +38,16 @@ let courses: CourseModel[] = [
         rating: 3,
         imageUrl: "https://blog.openreplay.com/images/understanding-redux-thunk-for-react--the-big-picture/images/hero.png"
     }
-];
+],
+
+});
 
 
+
+function DeleteCourseHandler(theCourseId:number){
+    // console.log("Deleting..",theCourseId)
+    courses.courselist = courses.courselist.filter((course:CourseModel)=>course.id !== theCourseId)
+}
 
 
 </script>
