@@ -5,9 +5,11 @@
             <h1>All Posts</h1>
         </header>
         <main>
-            <ul>
-                <li v-for="post in posts.list">
-                    {{post.title}}
+            <ul class="list-group">
+                <li v-for="post in posts.list" class="list-group-item">
+                   <router-link :to="`/postdetails/${post.id}`">
+                     {{post.title}}
+                   </router-link>
                 </li>
             </ul>
 

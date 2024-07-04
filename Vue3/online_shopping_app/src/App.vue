@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import ListOfCourses from "@/components/ListOfCourses.vue";
-import Posts from "@/components/Posts.vue";
+import Navbar from "@/components/Navbar.vue"
 </script>
 
 <template>
   <div class="container">
-    <!-- <ListOfCourses /> -->
-
-    <Posts />
+    <!-- <a href="/"> Home </a> | <a href="/posts">Posts</a> -->
+    <!-- <router-link to="/"> Courses </router-link> |
+    <router-link to="/posts"> Posts </router-link> -->
+    <Navbar />
+      <router-view></router-view>
+    
   </div>
 </template>
 
