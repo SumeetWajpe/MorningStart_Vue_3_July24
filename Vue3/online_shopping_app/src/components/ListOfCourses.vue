@@ -1,9 +1,10 @@
 <template>
-    <div>
-        List Of Courses !
-    </div>
+   <div class="row">
+       <Course v-for="course in courses" :coursedetails="course" />
+   </div>
 </template>
 <script setup lang="ts">
+import Course from "@/components/Course.vue";
 import type { CourseModel } from '@/types/types';
 
 
@@ -30,4 +31,6 @@ let courses: CourseModel[] = [
 
 
 </script>
-<style></style>
+<style>
+
+</style>

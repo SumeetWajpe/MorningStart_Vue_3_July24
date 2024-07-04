@@ -3,7 +3,9 @@ import ListOfCourses from "@/components/ListOfCourses.vue"
 </script>
 
 <template>
-  <ListOfCourses />
+  <div class="container">
+    <ListOfCourses />
+  </div>
 </template>
 
 <style scoped></style>
