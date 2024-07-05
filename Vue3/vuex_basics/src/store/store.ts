@@ -1,33 +1,33 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
 
 // Appwide data
 const state = {
-  count: 0
-}
+  count: 1000
+};
 
 // mutations
 
 const mutations = {
   // use strong type
   increment(state: any) {
-    state.count++
+    state.count++;
   },
   decrement(state: any) {
-    state.count--
+    state.count--;
   }
-}
+};
 
 const actions = {
   incrementCount({ commit }: any) {
-    commit('increment') // mutation
+    commit('increment'); // mutation
   },
   decrementCount({ commit }: any) {
-    commit('decrement') // mutation
+    commit('decrement'); // mutation
   }
-}
+};
 
 export default createStore({
   state,
   actions,
   mutations
-})
+});
