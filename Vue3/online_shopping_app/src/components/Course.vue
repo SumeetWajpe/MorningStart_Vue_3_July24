@@ -1,7 +1,9 @@
 <template >
     <div class="col-md-3">
     <div class="card" width="250px" height="200px" >
+       <router-link :to="{ name: 'coursedetails', params: { id: coursedetails.id } }">
   <img :src="coursedetails.imageUrl" class="card-img-top" :alt="coursedetails.title">
+       </router-link>
   <div class="card-body">
     <h5 class="card-title">{{coursedetails.title}}</h5>
     <p class="card-text">₹.{{coursedetails.price}}</p>
