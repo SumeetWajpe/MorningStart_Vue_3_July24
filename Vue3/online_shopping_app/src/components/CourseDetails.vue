@@ -10,31 +10,37 @@
 
             <p>₹.{{ courseData?.course?.price }}</p>
             <button class="btn btn-primary">
-              {{ courseData?.course?.likes }}  <i class="fa-regular fa-thumbs-up"></i>
+                {{ courseData?.course?.likes }} <i class="fa-regular fa-thumbs-up"></i>
             </button>
 
             <p>{{ courseData?.course?.description }}</p>
+
+            <button class="btn btn-success" @click="() => RedirectToCourseList()">
+                <i class="fa-solid fa-arrow-left"></i> Go Back
+            </button>
         </div>
     </div>
 </template>
 <script setup lang="ts">
-import { useRoute } from "vue-router"
+import { useRoute, useRouter } from "vue-router"
 import { reactive, onMounted } from "vue";
 import Rating from "@/components/Rating.vue";
 
 import axios from "axios"
 const route = useRoute()
-
+const router = useRouter()
 
 const courseData = reactive({
-    course: {id:0,title:"",price:0,likes:0,rating:0,imageUrl:"",description:""}
+    course: { id: 0, title: "", price: 0, likes: 0, rating: 0, imageUrl: "", description: "" }
 });
+
+function RedirectToCourseList() {
+    router.push("/dashboard")
+}
 
 onMounted(async () => {
     const { data } = await axios.get(`http://localhost:3500/courses/${route.params.id}`)
     courseData.course = data
 })
 </script>
-<style>
-    
-</style>
+<style></style>

@@ -4,6 +4,7 @@ import PostDetails from "@/components/PostDetails.vue";
 import CourseDetails from "@/components/CourseDetails.vue";
 import Dashboard from "@/components/Dashboard.vue";
 import NotFound from "@/components/NotFound.vue";
+import Login from "@/components/Login.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -21,7 +22,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // Nested Routes
 const routes = [
-  // {path:"/",component:Login},
+  { path: "/", component: Login },
   {
     path: "/dashboard",
     component: Dashboard,
@@ -36,6 +37,7 @@ const routes = [
       { path: "postdetails/:id([0-9]+)", component: PostDetails },
     ],
   },
+
   { path: "/:pathMatch(.*)*", component: NotFound },
 ];
 
